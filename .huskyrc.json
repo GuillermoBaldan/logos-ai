@@ -1,0 +1,1 @@
+{"hooks":{"pre-commit":"echo \"[pre-commit] Lint pending (placeholder)\"","commit-msg":"commitlint --edit $1","pre-push":"echo \"[pre-push] Run tests/build (placeholder)\""}}
