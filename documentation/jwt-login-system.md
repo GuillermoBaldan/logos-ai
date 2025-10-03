@@ -110,3 +110,9 @@ Notas de implementación
 - Validación estricta del JWT en middleware de acceso a APIs
 - Persistencia fiable de sesiones (transacciones en revocación/rotación)
 - Pruebas: flujos de login, refresh, revocación, expiración y casos de reloj desfasado
+
+Documentos relacionados
+- [[01-arquitectura-general]]
+- [[03-backend]]
+- [[05-seguridad]]
+- [[adrs/ADR-0001-eleccion-sistema-login]]
