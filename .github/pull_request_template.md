@@ -13,10 +13,10 @@ Por favor, explica el propósito de este PR, el contexto y qué problema resuelv
 - [ ] chore (tareas de mantenimiento)
 
 ## Áreas afectadas
-- [ ] Backend
-- [ ] Frontend
+- [ ] Backend (Node.js + Express + TypeScript)
+- [ ] Frontend (React + TypeScript + Bootstrap)
 - [ ] IA
-- [ ] Data
+- [ ] Data (MongoDB)
 - [ ] Ops/CI
 
 ## Cómo probar
@@ -25,14 +25,17 @@ Por favor, explica el propósito de este PR, el contexto y qué problema resuelv
 - Datos de ejemplo
 
 ## Checklist
-- [ ] La rama está sincronizada/rebaseada con `develop`
-- [ ] Lint y type-check pasan localmente
-- [ ] Tests (si existen) pasan localmente
-- [ ] Build (si aplica) funciona
-- [ ] CI (Actions) pasa
-- [ ] No se introducen secretos ni credenciales
-- [ ] Documentación actualizada (por ejemplo en `Documentation/`)
-- [ ] Evidencia adjunta si hay cambios de UI
+- [ ] El código sigue las convenciones del proyecto
+- [ ] TypeScript: No hay errores de tipos
+- [ ] ESLint: No hay errores de linting
+- [ ] Prettier: El código está formateado correctamente
+- [ ] Se han añadido tests para los nuevos cambios
+- [ ] Todos los tests pasan
+- [ ] Se ha actualizado la documentación si es necesario
+- [ ] No hay conflictos de merge
+- [ ] El código ha sido revisado por el autor
+- [ ] Frontend: Componentes React siguen las mejores prácticas
+- [ ] Backend: APIs siguen las convenciones REST/Express
 
 ## Impacto/Notas adicionales
 - Riesgos, compatibilidad, migraciones, tareas de seguimiento

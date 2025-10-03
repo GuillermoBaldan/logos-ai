@@ -8,7 +8,7 @@ on:
 
 jobs:
   backend:
-    name: Backend Lint/Build
+    name: Backend (Node.js + Express + TypeScript)
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -16,24 +16,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
           cache-dependency-path: backend/package-lock.json
-      - name: Install
+      - name: Install dependencies
         run: |
-          if [ -f package.json ]; then npm ci; else echo "No backend"; fi
-      - name: Lint
+          if [ -f package.json ]; then npm ci; else echo "Backend not initialized yet"; fi
+      - name: TypeScript check
         run: |
-          if [ -f package.json ]; then npm run lint --if-present; else echo "No backend"; fi
+          if [ -f package.json ]; then npm run type-check --if-present; else echo "Backend not initialized yet"; fi
+      - name: Lint (ESLint)
+        run: |
+          if [ -f package.json ]; then npm run lint --if-present; else echo "Backend not initialized yet"; fi
+      - name: Run tests
+        run: |
+          if [ -f package.json ]; then npm run test --if-present; else echo "Backend not initialized yet"; fi
       - name: Build
         run: |
-          if [ -f package.json ]; then npm run build --if-present; else echo "No backend"; fi
+          if [ -f package.json ]; then npm run build --if-present; else echo "Backend not initialized yet"; fi
 
   frontend:
-    name: Frontend Lint/Build
+    name: Frontend (React + TypeScript + Bootstrap)
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -41,18 +47,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
           cache-dependency-path: frontend/package-lock.json
-      - name: Install
+      - name: Install dependencies
         run: |
-          if [ -f package.json ]; then npm ci; else echo "No frontend"; fi
-      - name: Lint
+          if [ -f package.json ]; then npm ci; else echo "Frontend not initialized yet"; fi
+      - name: TypeScript check
         run: |
-          if [ -f package.json ]; then npm run lint --if-present; else echo "No frontend"; fi
-      - name: Build
+          if [ -f package.json ]; then npm run type-check --if-present; else echo "Frontend not initialized yet"; fi
+      - name: Lint (ESLint + React rules)
         run: |
-          if [ -f package.json ]; then npm run build --if-present; else echo "No frontend"; fi
+          if [ -f package.json ]; then npm run lint --if-present; else echo "Frontend not initialized yet"; fi
+      - name: Run tests (React Testing Library)
+        run: |
+          if [ -f package.json ]; then npm run test --if-present; else echo "Frontend not initialized yet"; fi
+      - name: Build (Vite)
+        run: |
+          if [ -f package.json ]; then npm run build --if-present; else echo "Frontend not initialized yet"; fi

@@ -2,6 +2,18 @@
 
 Este documento deja constancia del flujo de trabajo acordado para integrar cambios en la rama `develop` del repositorio.
 
+## Stack tecnológico
+
+### Frontend
+- **React**: Framework de UI para componentes interactivos
+- **TypeScript**: Tipado estático para mayor robustez y mantenibilidad
+- **Bootstrap**: Framework CSS para diseño responsivo y componentes UI
+
+### Backend
+- **Node.js**: Runtime de JavaScript para el servidor
+- **Express**: Framework web minimalista y flexible
+- **MongoDB**: Base de datos NoSQL para almacenamiento de documentos
+
 ## Modelo de ramas
 - `main`: línea estable y liberable (versionada con tags `vX.Y.Z`).
 - `develop`: integración continua de cambios aprobados. Base para `release/*`.
